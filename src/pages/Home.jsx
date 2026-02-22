@@ -8,12 +8,38 @@ function Home() {
     'TypeScript',
     'React',
     'React Native',
+    'Next.js',
     'Node.js',
     'Firebase',
+    'Cloud Functions',
+    'Firestore',
     'RESTful APIs',
+    'Expo',
+    'Tailwind CSS',
     'Figma',
     'Git/GitHub',
     'Agile'
+  ];
+
+  const experiences = [
+    {
+      company: 'Swipeline TR',
+      role: 'Software Developer Intern',
+      date: 'Jul 2025 - Present',
+      description: 'Engineered interactive frontend features using React and TypeScript, developed backend services with Node.js, Firebase Cloud Functions, and RESTful APIs.'
+    },
+    {
+      company: 'Gamelab Istanbul',
+      role: 'Software Developer Intern',
+      date: 'Jul 2025 - Aug 2025',
+      description: 'Developed custom UI components in C++ to enhance interactivity and graphics rendering, optimized AI-powered application functionalities.'
+    },
+    {
+      company: 'Intertech',
+      role: 'Software Engineering Intern',
+      date: 'Aug 2025 - Sep 2025',
+      description: 'Built and tested a mobile chatbot application using React Native, TypeScript, and Expo Go; designed UI/UX components in Figma.'
+    }
   ];
 
   return (
@@ -46,23 +72,16 @@ function Home() {
       </section>
 
       <section className="experience-preview">
-        <h2 className="section-title">Experience Overview</h2>
+        <h2 className="section-title">Experience Highlights</h2>
         <div className="experience-cards">
-          <div className="experience-card">
-            <h3>Swipeline TR</h3>
-            <p className="role">Software Developer Intern</p>
-            <p className="date">Jul 2025 - Present</p>
-          </div>
-          <div className="experience-card">
-            <h3>Gamelab Istanbul</h3>
-            <p className="role">Software Developer Intern</p>
-            <p className="date">Jul 2025 - Aug 2025</p>
-          </div>
-          <div className="experience-card">
-            <h3>Intertech</h3>
-            <p className="role">Software Engineering Intern</p>
-            <p className="date">Aug 2025 - Sep 2025</p>
-          </div>
+          {experiences.map((exp, index) => (
+            <div key={index} className="experience-card">
+              <h3>{exp.company}</h3>
+              <p className="role">{exp.role}</p>
+              <p className="date">{exp.date}</p>
+              <p className="description">{exp.description}</p>
+            </div>
+          ))}
         </div>
       </section>
     </div>

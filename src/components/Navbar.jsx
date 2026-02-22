@@ -29,6 +29,14 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <Link
+              to="/projects"
+              className={`nav-link ${location.pathname === '/projects' ? 'active' : ''}`}
+            >
+              Projects
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
               to="/contact"
               className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
             >

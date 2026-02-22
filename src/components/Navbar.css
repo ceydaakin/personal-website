@@ -1,13 +1,15 @@
 .navbar {
-  background-color: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 1.25rem 2rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: var(--spacing-md) var(--spacing-xl);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid var(--color-border);
+  transition: all var(--transition-base);
 }
 
 .navbar-container {
@@ -19,11 +21,16 @@
 }
 
 .navbar-logo {
-  color: #f8fafc;
-  font-size: 1.25rem;
-  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
   text-decoration: none;
   letter-spacing: -0.02em;
+  transition: all var(--transition-base);
+}
+
+.navbar-logo:hover {
+  color: var(--color-accent);
 }
 
 .nav-menu {
@@ -31,57 +38,66 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 2.5rem;
+  gap: var(--spacing-2xl);
 }
 
 .nav-link {
-  color: #94a3b8;
+  color: var(--color-text-secondary);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   font-weight: 500;
-  padding: 0.5rem 0;
-  transition: color 0.2s ease;
+  padding: var(--spacing-sm) 0;
+  transition: all var(--transition-base);
   position: relative;
 }
 
-.nav-link:hover {
-  color: #f8fafc;
-}
-
-.nav-link.active {
-  color: #f8fafc;
-}
-
-.nav-link.active::after {
+.nav-link::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  right: 0;
+  width: 0;
   height: 2px;
-  background-color: #3b82f6;
+  background-color: var(--color-accent);
+  transition: width var(--transition-base);
+}
+
+.nav-link:hover {
+  color: var(--color-text-primary);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--color-accent);
+}
+
+.nav-link.active::after {
+  width: 100%;
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .navbar {
-    padding: 1rem;
+    padding: var(--spacing-md);
   }
 
   .navbar-container {
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--spacing-md);
   }
 
   .nav-menu {
-    gap: 1.5rem;
+    gap: var(--spacing-xl);
   }
 
   .nav-link {
-    font-size: 0.85rem;
+    font-size: var(--font-size-sm);
   }
 
   .navbar-logo {
-    font-size: 1.1rem;
+    font-size: var(--font-size-lg);
   }
 }
