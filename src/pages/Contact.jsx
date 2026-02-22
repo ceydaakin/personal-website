@@ -33,12 +33,6 @@ function Contact() {
       link: 'mailto:akince22@itu.edu.tr'
     },
     {
-      icon: '📱',
-      title: 'Phone',
-      value: '+90-553-112-1281',
-      link: 'tel:+905531121281'
-    },
-    {
       icon: '💼',
       title: 'LinkedIn',
       value: 'linkedin.com/in/ceydaakin',
