@@ -1,0 +1,243 @@
+.about {
+  padding-top: 80px;
+  min-height: 100vh;
+  background-color: #0f172a;
+}
+
+/* About Hero */
+.about-hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  border-bottom: 1px solid #1e293b;
+}
+
+.about-hero h1 {
+  font-size: 2.25rem;
+  color: #f8fafc;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.about-intro {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: #94a3b8;
+  line-height: 1.8;
+}
+
+/* Education Section */
+.education-section {
+  padding: 4rem 2rem;
+  border-bottom: 1px solid #1e293b;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #f8fafc;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.education-card {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #1e293b;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #334155;
+}
+
+.education-card h3 {
+  color: #f8fafc;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.education-card .degree {
+  color: #3b82f6;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.education-card .gpa {
+  color: #e2e8f0;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.education-card .date {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* Experience Section */
+.experience-section {
+  padding: 4rem 2rem;
+  background-color: #1e293b;
+}
+
+.timeline {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 24px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #334155;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 24px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -29px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background-color: #3b82f6;
+  border-radius: 50%;
+}
+
+.timeline-content {
+  background-color: #0f172a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  transition: all 0.2s ease;
+}
+
+.timeline-content:hover {
+  border-color: #475569;
+}
+
+.timeline-content h3 {
+  color: #f8fafc;
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.timeline-content .role {
+  color: #3b82f6;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.timeline-content .date {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-content .description {
+  color: #94a3b8;
+  line-height: 1.7;
+  font-size: 0.9rem;
+}
+
+/* Certificates Section */
+.certificates-section {
+  padding: 4rem 2rem;
+  background-color: #0f172a;
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.certificate-card {
+  background-color: #1e293b;
+  padding: 1.25rem;
+  border-radius: 8px;
+  position: relative;
+  border: 1px solid #334155;
+  transition: all 0.2s ease;
+}
+
+.certificate-card:hover {
+  border-color: #475569;
+}
+
+.certificate-card h4 {
+  color: #f8fafc;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding-right: 50px;
+}
+
+.certificate-card .org {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
+.certificate-card .year {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #334155;
+  color: #e2e8f0;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .about-intro {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .timeline {
+    padding-left: 16px;
+  }
+
+  .timeline-item {
+    padding-left: 16px;
+  }
+
+  .timeline-marker {
+    left: -21px;
+    width: 8px;
+    height: 8px;
+  }
+
+  .timeline-content {
+    padding: 1.25rem;
+  }
+
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+}

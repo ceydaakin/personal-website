@@ -1,0 +1,9 @@
+# robots.txt - Instructions for web crawlers
+# This file tells search engine bots which parts of the site they can crawl
+
+User-agent: *
+Allow: /
+Disallow:
+
+# Sitemap location
+Sitemap: https://ceydaakin.com/sitemap.xml

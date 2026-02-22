@@ -1,0 +1,5 @@
+# CloudFlare Pages / Netlify icin SPA yonlendirme ayarlari
+# React Router kullanan Single Page Application'lar icin gerekli
+# Tum rotalar index.html'e yonlendirilir
+
+/*    /index.html   200
