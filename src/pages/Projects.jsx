@@ -3,6 +3,37 @@ import './Projects.css';
 function Projects() {
   const featuredProjects = [
     {
+      title: 'Agentic RAG',
+      year: '2026',
+      description: 'A production-style AI agent built from scratch with a custom ReAct reasoning loop (no LangChain), autonomous tool selection across six tools, hybrid retrieval (dense vectors + BM25 + Reciprocal Rank Fusion), SSE streaming, and per-answer source attribution.',
+      technologies: ['Python', 'FastAPI', 'ChromaDB', 'LLM APIs', 'RAG'],
+      category: 'AI Agents'
+    },
+    {
+      title: 'Company Intel AI',
+      year: '2026',
+      description: 'A full-stack VC-analyst intelligence tool (async FastAPI + SQLAlchemy, React/Tailwind) generating AI reports with a deterministic 0–100 deal-attractiveness score; containerized with Docker Compose and instrumented with Prometheus and Grafana.',
+      technologies: ['React', 'TypeScript', 'FastAPI', 'PostgreSQL', 'Gemini', 'Docker'],
+      category: 'Full-Stack AI'
+    },
+    {
+      title: 'LooksMax',
+      year: '2025',
+      description: 'An AI facial-analysis app shipped to the App Store with a production analytics and monetization stack: a unified event dispatcher fanning out to Mixpanel, Firebase, and Adjust, Adapty StoreKit subscriptions, server-to-server renewal webhooks, and A/B-tested paywall funnels.',
+      technologies: ['React Native', 'Expo', 'TypeScript', 'Vision LLM APIs', 'Adapty'],
+      category: 'Mobile & AI'
+    },
+    {
+      title: 'FamilyCode',
+      year: '2026',
+      description: 'An AI ancestry app generating origin reports and interactive family trees; engineered automatic PII sanitization that reduces sensitive route params to boolean flags before analytics dispatch, with Adapty/RevenueCat server-to-server renewal webhooks.',
+      technologies: ['React Native', 'Expo', 'TypeScript', 'Firebase'],
+      category: 'Mobile & AI'
+    }
+  ];
+
+  const academicProjects = [
+    {
       title: 'Netflix Clustering Analysis',
       description: 'K-Means clustering analysis of 8,807 Netflix shows from Kaggle dataset. Explored patterns in content genres, release years, and regional distributions using unsupervised machine learning techniques.',
       technologies: ['Python', 'Scikit-learn', 'Pandas', 'Data Analysis'],
@@ -62,39 +93,61 @@ function Projects() {
     { name: 'Schelling Model', description: 'Agent-based simulation of segregation dynamics', github: 'https://github.com/ceydaakin/schelling', lang: 'Haskell' }
   ];
 
+  const renderProjectCard = (project, index) => (
+    <div key={index} className="project-card">
+      <div className="project-card-header">
+        <span className="project-category">{project.category}</span>
+        {project.year && <span className="project-year">{project.year}</span>}
+      </div>
+      <h3>{project.title}</h3>
+      <p className="project-description">{project.description}</p>
+      <div className="project-technologies">
+        {project.technologies.map((tech, i) => (
+          <span key={i} className="tech-tag">{tech}</span>
+        ))}
+      </div>
+      {project.github && (
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="project-link"
+        >
+          View on GitHub →
+        </a>
+      )}
+    </div>
+  );
+
   return (
     <div className="projects">
       <section className="projects-hero">
         <h1>Projects</h1>
         <p className="projects-intro">
-          A collection of my academic and personal projects spanning machine learning,
-          systems programming, game development, and functional programming.
+          AI agents, retrieval systems, and full-stack products I have built end to end —
+          alongside academic work in machine learning, systems programming, game
+          development, and functional programming.
         </p>
       </section>
 
       <section className="featured-projects">
         <h2 className="section-title">Featured Projects</h2>
+        <p className="section-subtitle">
+          Production-style AI and full-stack products
+        </p>
         <div className="projects-grid">
-          {featuredProjects.map((project, index) => (
-            <div key={index} className="project-card">
-              <span className="project-category">{project.category}</span>
-              <h3>{project.title}</h3>
-              <p className="project-description">{project.description}</p>
-              <div className="project-technologies">
-                {project.technologies.map((tech, i) => (
-                  <span key={i} className="tech-tag">{tech}</span>
-                ))}
-              </div>
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-link"
-              >
-                View on GitHub →
-              </a>
-            </div>
-          ))}
+          {featuredProjects.map(renderProjectCard)}
+        </div>
+      </section>
+
+      <section className="academic-projects">
+        <h2 className="section-title">Academic &amp; Personal Projects</h2>
+        <p className="section-subtitle">
+          Machine learning, security, and systems programming work from university and
+          side projects
+        </p>
+        <div className="projects-grid">
+          {academicProjects.map(renderProjectCard)}
         </div>
       </section>
 

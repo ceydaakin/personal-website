@@ -3,28 +3,40 @@ import './About.css';
 function About() {
   const experiences = [
     {
-      company: 'Swipeline TR',
-      role: 'Software Developer Intern',
-      date: 'Jul 2025 - Present',
-      description: 'Engineered interactive frontend features using React and TypeScript to improve user engagement, and developed backend services with Node.js, Firebase Cloud Functions, and RESTful APIs to enable scalable data processing and content delivery.'
+      company: 'Vodafone',
+      role: 'CBU Offer Intern',
+      date: 'Jul 2026 - Present',
+      description: 'Contribute to enterprise mobile and web product development within an Agile delivery team, building customer-facing features and applying industry-standard code review and CI/CD practices.'
     },
     {
-      company: 'Gamelab Istanbul',
-      role: 'Software Developer Intern',
-      date: 'Jul 2025 - Aug 2025',
-      description: 'Developed and integrated custom UI components in C++ to enhance interactivity and graphics rendering, and optimized core functionalities of an AI-powered application to improve performance, scalability, and user experience.'
+      company: 'Feast',
+      role: 'Backend & Microservice Developer / System Administrator',
+      date: 'Mar 2026 - Present',
+      description: 'Design and maintain a microservice backend for a social restaurant-discovery platform, building RESTful services in Go and orchestrating deployments on a self-managed Kubernetes (k3s) cluster with monitoring for high availability and horizontal scalability.'
+    },
+    {
+      company: 'Sentez',
+      role: 'Mobile Developer',
+      date: 'Oct 2025 - Present',
+      description: 'Ship cross-platform features across a shared React Native codebase and native iOS (Swift/SwiftUI); built an edit-section module with Node.js/Firebase Cloud Functions and owned the subscription module (in-app purchases, plan upgrades, billing) powering recurring SaaS revenue.'
     },
     {
       company: 'Intertech Information Technology and Marketing Inc.',
       role: 'Software Engineering Intern',
       date: 'Aug 2025 - Sep 2025',
-      description: 'Built and tested a mobile chatbot application using React Native, TypeScript, and Expo Go; designed UI/UX components in Figma and integrated frontend features with backend services to deliver a seamless, scalable user experience.'
+      description: 'Built and shipped a mobile chatbot app in React Native/TypeScript/Expo; designed the UI/UX in Figma and integrated frontend features with backend services.'
     },
     {
-      company: 'Google Developer Student Clubs - ITU',
-      role: 'GDG on Campus ITU Organizer',
+      company: 'Gamelab Istanbul',
+      role: 'Software Developer Intern',
+      date: 'Jul 2025 - Aug 2025',
+      description: 'Developed custom UI components in C++ for graphics rendering within an AI-powered desktop application, and optimized core functionality to improve performance and scalability.'
+    },
+    {
+      company: 'GDG on Campus ITU',
+      role: 'Organizer',
       date: 'Sep 2024 - Jun 2025',
-      description: 'Organized 8+ tech workshops and speaker events for 300+ students, growing GDG on Campus ITU to 250+ active members and fostering hands-on experience with Google technologies.'
+      description: 'Organized 8+ technical workshops for 300+ students on Google Cloud, Firebase, and ML; grew the community to 250+ active members.'
     },
     {
       company: 'Young Guru Academy (YGA)',
@@ -59,66 +71,66 @@ function About() {
   ];
 
   const certificates = [
-    { name: 'Certified Associate in Project Management (CAPM) Training', org: 'ITU Center for Excellence in Education', year: '2023' },
     { name: 'Akbank Machine Learning Bootcamp', org: 'Global AI Hub', year: '2024' },
     { name: 'Python Programming 101-401', org: 'Turkcell Gelecegi Yazanlar', year: '2024' },
+    { name: 'AI Applications Programming with C++', org: 'Gamelab Istanbul', year: '2025' },
+    { name: 'Certified Associate in Project Management (CAPM) Training', org: 'ITU Center for Excellence in Education', year: '2023' },
     { name: 'Akbank Python Bootcamp', org: 'Global AI Hub', year: '2024' },
     { name: 'SheCodes Basics + Basics Add-on', org: 'SheCodes', year: '2024' },
-    { name: 'EY Strategy and Corporate Finance School', org: 'EY', year: '2024' },
-    { name: 'AI Applications Programming with C++', org: 'Gamelab Istanbul', year: '2025' }
+    { name: 'EY Strategy and Corporate Finance School', org: 'EY', year: '2024' }
   ];
 
   const technicalExpertise = [
     {
-      category: 'Mobile Development',
-      skills: ['React Native', 'Expo SDK', 'iOS Development', 'NativeWind', 'React Navigation', 'Offline-First Architecture']
+      category: 'Languages',
+      skills: ['Python', 'TypeScript', 'JavaScript', 'Swift', 'Go', 'C++', 'SQL']
     },
     {
-      category: 'Web Development',
-      skills: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Radix UI', 'Framer Motion']
+      category: 'AI / ML',
+      skills: ['LLM APIs', 'Prompt Engineering', 'RAG', 'Agentic Systems (ReAct)', 'Vector Search', 'ChromaDB']
     },
     {
       category: 'Backend & Cloud',
-      skills: ['Firebase', 'Cloud Functions', 'Firestore', 'Cloud Storage', 'Remote Config', 'Node.js', 'RESTful APIs']
+      skills: ['FastAPI', 'Node.js', 'PostgreSQL', 'Firebase', 'Docker', 'Kubernetes (k3s)', 'REST']
     },
     {
-      category: 'AI & Machine Learning',
-      skills: ['AI Integration', 'Computer Vision APIs', 'ML Model Deployment', 'Replicate API', 'Image Processing']
+      category: 'Observability & DevOps',
+      skills: ['Prometheus', 'Grafana', 'CI/CD', 'Git/GitHub', 'Docker Compose', 'Sentry']
     },
     {
-      category: 'DevOps & Tools',
-      skills: ['Git/GitHub', 'Sentry', 'Firebase Analytics', 'CI/CD', 'Testing (Vitest, Playwright)', 'Agile']
+      category: 'Frontend & Mobile',
+      skills: ['React', 'React Native', 'Expo', 'SwiftUI', 'Tailwind', 'Figma']
     },
     {
       category: 'Monetization & Analytics',
-      skills: ['RevenueCat', 'Stripe Integration', 'Subscription Management', 'User Analytics', 'A/B Testing']
+      skills: ['Adapty', 'RevenueCat', 'StoreKit', 'Mixpanel', 'Adjust', 'A/B Testing', 'App Store Deployment']
     }
   ];
 
   const researchInterests = [
     {
-      area: 'Machine Learning & AI',
+      area: 'Agentic AI & Retrieval',
       icon: '🧠',
-      description: 'Developing intelligent systems that solve real-world problems in healthcare, finance, and education. Interested in deep learning architectures, computer vision, and making AI more accessible and impactful.',
-      topics: ['Deep Learning', 'Computer Vision', 'Applied AI', 'NLP']
+      description: 'Building LLM agents that reason and act — custom ReAct loops, autonomous tool selection, and hybrid retrieval that combines dense vectors with BM25 and Reciprocal Rank Fusion for answers grounded in real sources.',
+      topics: ['ReAct Agents', 'RAG', 'Vector Search', 'Source Attribution']
     },
     {
-      area: 'Security & Privacy',
-      icon: '🔐',
-      description: 'Building secure systems and exploring privacy-preserving machine learning techniques. Focused on threat detection, anomaly detection algorithms, and developing robust security solutions.',
-      topics: ['Threat Detection', 'Privacy-Preserving ML', 'Secure Systems', 'Anomaly Detection']
-    },
-    {
-      area: 'Human-Computer Interaction',
-      icon: '👥',
-      description: 'Creating intuitive and accessible interactive systems. Interested in how users interact with AI-powered applications and designing experiences that bridge technology and human needs.',
-      topics: ['UX Research', 'Accessibility', 'Interactive AI', 'User-Centered Design']
-    },
-    {
-      area: 'Software Engineering',
+      area: 'Distributed Systems & Cloud',
       icon: '⚙️',
-      description: 'Advancing software development practices through better tooling, testing methodologies, and architectural patterns. Interested in code quality, developer productivity, and scalable system design.',
-      topics: ['Software Architecture', 'DevOps', 'Code Analysis', 'Scalable Systems']
+      description: 'Running services that stay up: Go microservices on a self-managed Kubernetes (k3s) cluster, containerized with Docker, instrumented with Prometheus and Grafana for high availability and horizontal scalability.',
+      topics: ['Microservices', 'Kubernetes', 'Observability', 'System Design']
+    },
+    {
+      area: 'Mobile Product Engineering',
+      icon: '📱',
+      description: 'Shipping cross-platform apps to the App Store with React Native, Expo, and native iOS — including subscription infrastructure, server-to-server renewal webhooks, and A/B-tested paywall funnels.',
+      topics: ['React Native', 'SwiftUI', 'In-App Purchases', 'Growth Analytics']
+    },
+    {
+      area: 'Privacy & Secure Engineering',
+      icon: '🔐',
+      description: 'Treating user data carefully by default — automatic PII sanitization before analytics dispatch, secure programming practices, and designing systems where sensitive information never leaves the boundary it should stay in.',
+      topics: ['PII Sanitization', 'Secure Programming', 'Data Privacy', 'Analytics Hygiene']
     }
   ];
 
@@ -127,10 +139,11 @@ function About() {
       <section className="about-hero">
         <h1>About Me</h1>
         <p className="about-intro">
-          I am a motivated technology professional with hands-on experience in Python, C++,
-          frontend and backend development, AI-driven applications, and mobile app solutions.
-          Recognized for strong teamwork, innovation, and the ability to bridge technical
-          expertise with impactful project outcomes.
+          I am a Computer Engineering student and software engineer building AI-powered
+          products end to end — from custom LLM agents and retrieval systems to full-stack
+          apps and production analytics. I work across Python/FastAPI backends,
+          React/React Native frontends, and cloud infrastructure, with a track record of
+          shipping to the App Store and running microservices on Kubernetes.
         </p>
       </section>
 
@@ -139,8 +152,12 @@ function About() {
         <div className="education-card">
           <h3>Istanbul Technical University</h3>
           <p className="degree">Bachelor of Science, Computer Engineering</p>
-          <p className="gpa">GPA: 3.12</p>
+          <p className="gpa">GPA: 3.08 / 4.00</p>
           <p className="date">2022 - 2027</p>
+          <p className="description">
+            Relevant coursework: Data Structures, Analysis of Algorithms, OOP,
+            Operating Systems, Database Systems, Secure Programming, Computer Architecture.
+          </p>
         </div>
       </section>
 
@@ -161,11 +178,11 @@ function About() {
       </section>
 
       <section className="research-section">
-        <h2 className="section-title">Research Interests</h2>
+        <h2 className="section-title">What I Focus On</h2>
         <p className="research-intro">
           I am passionate about applying technology to solve meaningful problems.
-          My research interests span multiple areas where I aim to contribute to advancing
-          the field while creating practical, real-world impact.
+          These are the areas where I spend most of my time building, and where I want
+          to go deeper.
         </p>
         <div className="research-grid">
           {researchInterests.map((interest, index) => (

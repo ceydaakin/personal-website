@@ -3,42 +3,45 @@ import './Home.css';
 function Home() {
   const skills = [
     'Python',
-    'C++',
-    'JavaScript',
     'TypeScript',
+    'JavaScript',
+    'Swift',
+    'Go',
+    'C++',
+    'SQL',
+    'LLM APIs',
+    'RAG',
+    'Agentic Systems',
+    'FastAPI',
+    'Node.js',
+    'PostgreSQL',
+    'Firebase',
+    'Docker',
+    'Kubernetes',
     'React',
     'React Native',
-    'Next.js',
-    'Node.js',
-    'Firebase',
-    'Cloud Functions',
-    'Firestore',
-    'RESTful APIs',
-    'Expo',
-    'Tailwind CSS',
-    'Figma',
-    'Git/GitHub',
-    'Agile'
+    'SwiftUI',
+    'Tailwind'
   ];
 
   const experiences = [
     {
-      company: 'Swipeline TR',
-      role: 'Software Developer Intern',
-      date: 'Jul 2025 - Present',
-      description: 'Engineered interactive frontend features using React and TypeScript, developed backend services with Node.js, Firebase Cloud Functions, and RESTful APIs.'
+      company: 'Vodafone',
+      role: 'CBU Offer Intern',
+      date: 'Jul 2026 - Present',
+      description: 'Contributing to enterprise mobile and web product development within an Agile delivery team, building customer-facing features with industry-standard code review and CI/CD practices.'
     },
     {
-      company: 'Gamelab Istanbul',
-      role: 'Software Developer Intern',
-      date: 'Jul 2025 - Aug 2025',
-      description: 'Developed custom UI components in C++ to enhance interactivity and graphics rendering, optimized AI-powered application functionalities.'
+      company: 'Feast',
+      role: 'Backend & Microservice Developer / System Administrator',
+      date: 'Mar 2026 - Present',
+      description: 'Designing a microservice backend for a social restaurant-discovery platform: RESTful services in Go, orchestrated on a self-managed Kubernetes (k3s) cluster with monitoring for high availability.'
     },
     {
-      company: 'Intertech',
-      role: 'Software Engineering Intern',
-      date: 'Aug 2025 - Sep 2025',
-      description: 'Built and tested a mobile chatbot application using React Native, TypeScript, and Expo Go; designed UI/UX components in Figma.'
+      company: 'Sentez',
+      role: 'Mobile Developer',
+      date: 'Oct 2025 - Present',
+      description: 'Shipping cross-platform features across a shared React Native codebase and native iOS (Swift/SwiftUI); owner of the subscription module powering recurring SaaS revenue.'
     }
   ];
 
@@ -47,11 +50,13 @@ function Home() {
       <section className="hero">
         <div className="hero-content">
           <h1 className="hero-title">Hi, I'm Ceyda Akın</h1>
-          <p className="hero-subtitle">Software Developer | Computer Engineering Student</p>
+          <p className="hero-subtitle">AI / Software Engineer | Computer Engineering Student</p>
           <p className="hero-description">
-            I'm a Computer Engineering student at Istanbul Technical University with
-            hands-on experience in Python, C++, frontend and backend development,
-            AI-driven applications, and mobile app solutions.
+            I build AI-powered products end to end — from custom LLM agents and retrieval
+            systems to full-stack apps and production analytics. Experienced across
+            Python/FastAPI backends, React/React Native frontends, and cloud infrastructure,
+            with a track record of shipping to the App Store and running microservices on
+            Kubernetes.
           </p>
           <div className="hero-buttons">
             <a href="/about" className="btn btn-primary">About Me</a>

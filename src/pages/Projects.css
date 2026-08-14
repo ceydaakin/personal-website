@@ -78,6 +78,14 @@
   box-shadow: var(--shadow-lg);
 }
 
+.project-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
 .project-category {
   display: inline-block;
   background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
@@ -86,8 +94,13 @@
   border-radius: var(--radius-full);
   font-size: var(--font-size-xs);
   font-weight: 600;
-  margin-bottom: var(--spacing-md);
-  align-self: flex-start;
+}
+
+.project-year {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.05em;
 }
 
 .project-card h3 {
@@ -137,10 +150,16 @@
   gap: var(--spacing-sm);
 }
 
+/* Academic Projects */
+.academic-projects {
+  padding: var(--spacing-4xl) var(--spacing-xl);
+  background-color: var(--color-bg-secondary);
+}
+
 /* Plugin Projects */
 .plugin-projects {
   padding: var(--spacing-4xl) var(--spacing-xl);
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg-primary);
 }
 
 .plugins-grid {
@@ -199,7 +218,7 @@
 /* Functional Projects */
 .functional-projects {
   padding: var(--spacing-4xl) var(--spacing-xl);
-  background-color: var(--color-bg-primary);
+  background-color: var(--color-bg-secondary);
 }
 
 .functional-grid {
@@ -258,7 +277,7 @@
 .github-cta {
   text-align: center;
   padding: var(--spacing-4xl) var(--spacing-xl);
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg-primary);
   border-top: 1px solid var(--color-border);
 }
 
@@ -287,6 +306,7 @@
   }
 
   .featured-projects,
+  .academic-projects,
   .plugin-projects,
   .functional-projects,
   .github-cta {
