@@ -17,4 +17,4 @@ npm run build    # static output in dist/
 npm run preview
 ```
 
-Pushing to `main` deploys to production on Vercel (framework preset set in `vercel.json`).
+Deploy with `npx vercel deploy --prod` (the Vercel project is not connected to GitHub, so a push does not deploy). `vercel.json` sets the Astro framework preset.
