@@ -1,0 +1,92 @@
+---
+import { siteConfig } from "../config";
+const hasResearch = siteConfig.research && siteConfig.research.length > 0;
+---
+
+{
+  hasResearch && (
+    <section id="research" class="p-8 sm:p-12 md:p-16 lg:p-24">
+      <div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+          <div class="lg:col-span-4">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900">
+              Research
+            </h2>
+            <div
+              class="w-[75px] h-[5px] mt-2 rounded-full"
+              style={`background-color: ${siteConfig.accentColor}`}
+            />
+          </div>
+
+          <div class="lg:col-span-8">
+            <div class="space-y-8">
+              {siteConfig.research.map((item) => (
+                <article class="bg-white rounded-lg shadow-sm border border-gray-100 p-4 sm:p-5 md:p-6">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+                    <div>
+                      <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
+                        {item.title}
+                      </h3>
+                      <p class="text-base sm:text-lg" style={`color: ${siteConfig.accentColor}`}>
+                        {item.group}
+                      </p>
+                    </div>
+                    <span class="text-xs sm:text-sm text-gray-500 sm:whitespace-nowrap">
+                      {item.dateRange}
+                    </span>
+                  </div>
+
+                  <p class="text-sm sm:text-base text-gray-600 mb-4">{item.summary}</p>
+
+                  {item.metrics && item.metrics.length > 0 && (
+                    <dl class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+                      {item.metrics.map((m) => (
+                        <div class="rounded-md bg-gray-50 border border-gray-100 p-3">
+                          <dt class="text-xs text-gray-500">{m.label}</dt>
+                          <dd class="text-lg font-bold leading-snug tabular-nums" style={`color: ${siteConfig.accentColor}`}>
+                            {m.value}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  )}
+
+                  <ul class="space-y-2">
+                    {item.bullets.map((bullet) => (
+                      <li class="flex items-start">
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
+                        <span class="text-sm sm:text-base text-gray-600">{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {item.skills && item.skills.length > 0 && (
+                    <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-4">
+                      {item.skills.map((skill) => (
+                        <span class="px-2.5 sm:px-3 py-1 bg-gray-900 text-white rounded-md text-xs sm:text-sm font-medium">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {item.link && (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-block mt-4 text-sm font-medium underline underline-offset-4"
+                      style={`color: ${siteConfig.accentColor}`}
+                    >
+                      View code
+                    </a>
+                  )}
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

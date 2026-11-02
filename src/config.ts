@@ -12,7 +12,7 @@ export const siteConfig = {
     github: "https://github.com/ceydaakin",
   },
   aboutMe:
-    "I'm a Computer Engineering student at Istanbul Technical University with over a year of professional experience across three roles. I design and operate a Go microservice backend on a self-managed Kubernetes cluster, build the integrations layer of an AI agent platform, and ship data pipelines with monitoring and alerting built in. I like owning a problem end to end, failure cases included: retries with backoff, alerts that fire only when an outage is real, and queries that are refused before they scan a whole collection.",
+    "I'm a Computer Engineering student at Istanbul Technical University with over a year of professional experience across three roles. I design and operate a Go microservice backend on a self-managed Kubernetes cluster, build the integrations layer of an AI agent platform, and ship data pipelines with monitoring and alerting built in. On the research side I work on fast encrypted inference with homomorphic encryption (CKKS) and on comparative genomics of lactic acid bacteria. I like owning a problem end to end, failure cases included: retries with backoff, alerts that fire only when an outage is real, and queries that are refused before they scan a whole collection.",
   skills: [
     "Go",
     "C++",
@@ -36,6 +36,52 @@ export const siteConfig = {
     "LLM agents",
     "RAG",
     "MCP",
+    "Homomorphic encryption (CKKS)",
+    "Bioinformatics",
+  ],
+  // Sources: ~/GitHub/ckks-xai-he README (measured on Apple Silicon, single core, Pyfhel 3.5.0)
+  // and the public genomics-pipeline repo + CV entry "Comparative Genomics Pipeline".
+  research: [
+    {
+      title: "Fast encrypted inference with explanations (CKKS + KernelSHAP)",
+      group: "ITU research project · Homomorphic encryption",
+      dateRange: "Oct 2026 – Present",
+      summary:
+        "Made CKKS homomorphic-encryption inference fast enough to explain its own predictions with KernelSHAP. The network (784→128→128→10 with a polynomial activation), its weights and the activation coefficients stay exactly as the team gave them; only how CKKS evaluates them changed, and every result is checked against the plaintext forward pass.",
+      metrics: [
+        { label: "Encrypted forward pass", value: "307× faster" },
+        { label: "KernelSHAP over HE (baseline est.)", value: "≈3.6 h → 11 s" },
+        { label: "Max logit error", value: "9.4e-3 → 3.7e-8" },
+        { label: "Encrypted weights + TEE", value: "301× faster" },
+      ],
+      bullets: [
+        "Packed each layer into one ciphertext with a hybrid-diagonal matrix-vector product and baby-step/giant-step rotations (GAZELLE, Halevi–Shoup): about 25 rotations per layer instead of 1,664 for layer 1.",
+        "Rewrote the activation polynomial so each layer needs one ciphertext-ciphertext multiply instead of 1,024 in total, folding its constants into the next layer offline; multiplicative depth went from 11 to 5.",
+        "Found a systematic precision bug: the baseline reset the ciphertext scale to 2^30 after every rescale while SEAL's primes sit up to 0.28% below it. Weights are now encoded at each prime's exact scale.",
+        "Batched 4 queries per ciphertext (SIMD slots) so KernelSHAP's 152 forward passes run as 38, with parameters kept at 128-bit security per the HE Security Standard.",
+        "Tests show real CKKS matches the plaintext model in both scenarios and batched queries never leak into each other.",
+      ],
+      skills: ["Python", "CKKS", "Pyfhel / Microsoft SEAL", "KernelSHAP", "NumPy"],
+    },
+    {
+      title: "Comparative genomics of Lactobacillus strains",
+      group: "Bioinformatics research · Manuscript in preparation",
+      dateRange: "2026",
+      summary:
+        "Automated a reproducible 30-genome analysis of lactic acid bacteria (Levilactobacillus local isolates against reference strains): genome quality, phylogeny, pangenome, CRISPR and bacteriocin mining, for a manuscript in preparation.",
+      metrics: [
+        { label: "Genomes", value: "30" },
+        { label: "Command to run it all", value: "1" },
+        { label: "Analysis stages", value: "10" },
+      ],
+      bullets: [
+        "One make run command discovers the genomes and runs BUSCO, Prokka, FastANI, Snippy, Panaroo, IQ-TREE and EggNOG-mapper end to end, each in its own conda environment, skipping steps whose output already exists.",
+        "Strain names are extracted from FASTA headers so every table and publication figure is labelled by strain; fixed bugs where same-species genomes overwrote each other's outputs and genomes sharing contig names were dropped.",
+        "Adds PCoA, core/accessory genome and Jaccard distance analyses and ML phylogenies with bootstrap support.",
+      ],
+      skills: ["Python", "R", "Conda", "BUSCO", "Prokka", "Panaroo", "IQ-TREE"],
+      link: "https://github.com/ceydaakin/genomics-pipeline",
+    },
   ],
   projects: [
     {
